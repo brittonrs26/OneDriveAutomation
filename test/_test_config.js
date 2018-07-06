@@ -4,12 +4,13 @@
 var config = {};
 
 config.webURL = 'https://login.microsoftonline.com';
-config.docsURL= 'https://onedrive.live.com/?id=9909A161E31A594%21104&cid=09909A161E31A594';
+config.oneDriveURL = 'https://onedrive.live.com';
+config.documentsURL = 'https://onedrive.live.com/?id=9909A161E31A594%21104&cid=09909A161E31A594';
 config.userID = 'rsbritton26@outlook.com';
 config.password = 'dianne1019';
 config.csvPath = '../Downloads/2016_August.csv';
-config.emptyTestFilePath = './test/files/emptyFile.txt';
-config.testFilePath = './test/files/testFile1.txt';
+config.emptyTestFilePath = 'C:\\Users\\user\\Desktop\\OneDriveAutomation\\test\\files\\emptyFile.txt';
+config.testFilePath = 'C:\\Users\\user\\Desktop\\OneDriveAutomation\\test\\files\\testFile1.txt';
 
 
 module.exports = config;
