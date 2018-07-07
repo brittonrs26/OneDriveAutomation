@@ -1,0 +1,15 @@
+File name automation ID = 1148
+open button automation ID = 1
+
+Install Python 2.7
+Add Python settings to system path variable in environment variables
+C:\Python27
+C:\Python27\Lib\site-packages
+C:\Python27\Scripts
+
+PYTHONPATH in system variables
+
+C:\Program Files (x86)\Python36-32; C:\Program Files (x86)\\Python36-32\Lib\site-packages; C:\Program Files (x86)\\Python36-32\Scripts
+
+
+visual studio .net framework 2.0 sdk

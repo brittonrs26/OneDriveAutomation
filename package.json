@@ -1,0 +1,30 @@
+{
+  "name": "onedriveautomation",
+  "version": "1.0.0",
+  "description": "Automation script for One Drive tests",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "autoit": "^1.1.9",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brittonrs26/OneDriveAutomation.git"
+  },
+  "author": "Rebekah Britton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brittonrs26/OneDriveAutomation/issues"
+  },
+  "homepage": "https://github.com/brittonrs26/OneDriveAutomation#readme"
+}

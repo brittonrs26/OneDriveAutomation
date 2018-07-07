@@ -1,0 +1,40 @@
+const fs = require('fs');
+
+const fileEditor = config.fileEditor;
+const documentsWindowButton = '//*[@class = "BreadcrumbBar-item BreadcrumbBar-navItem noContextMenu"][@name = "Documents"]';
+
+const editButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Open in Text Editor"]';
+const editText = '//*[@class = "mtk1"]';
+const saveButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Save"]';
+
+
+describe("Edit file contents and download versions", function(){
+    this.timeout(50000);
+    it("I verify I am in the 'Documents' folder", function(){
+        return driver.wait(until.elementLocated(By.xpath(documentsBreadCrumb)), 20000).getText().then(function(text){
+            assert.equal(text, "FilesDocuments");
+        });
+    });
+    it("I select the file", function(){
+        return driver.wait(until.elementLocated(By.xpath(selectButton)), 20000).click();
+    });
+    it("I click the 'open in text editor' button", function(){
+        return driver.get(fileEditor);
+    });
+    it("I make the changes to the file", function(){
+        // I must change the text attribute in the span of //*[@class = "mtk1" to something other than what is already there.
+    });
+    it("I save the changes", function(){
+        return driver.wait(until.elementLocated(By.xpath(saveButton)), 20000).click();
+    });
+    it("I go back to documents window", function(){
+        return driver.wait(until.elementLocated(By.xpath(documentsWindowButton)), 20000).click();
+    });
+});
+
+
+
+
+//These are the xpath values to the upload status button, and message.  This pops up and disappears faster than selenium can find it.
+const statusButton = '//button[@class = "ms-Button hide-label ms-Button--commandBar root-94"]';
+const fileUploadedLink = '//*[@title= "Recently added"]//following-sibling::span[1]';
