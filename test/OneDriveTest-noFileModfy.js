@@ -35,10 +35,8 @@ const emptyUploadScript = 'EmptyUpload.exe';
 const uploadScript = 'TestUpload1.exe';
 const fileUploadStatus = '//*[@class = "OperationMonitor-itemDescription"]';
 const emptyFileMessage = "Sorry, OneDrive can't upload empty folders or empty files. Please try again.";
+const uploadTestFileName = '//*[@data-automationid = "';
 const selectButton = '//span[@class = "ms-Tile-check check_04bd1798 checkHost_85139c76"]';
-const editButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Open in Text Editor"]';
-const editText = '//*[@class = "mtk1"]';
-const saveButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Save"]';
 const detailsButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Details"]';
 const oneDriveFilename = '//*[@class = "InfoPane-itemDetails-name"]';
 const oneDriveFileSize = '//*[@data-bind= "text: title"][text() = "Size"]//following-sibling::dd[1]';
@@ -145,7 +143,11 @@ describe("Upload non-empty document to Documents folder", function(){
     });
     it("I verify the file upload status", function(){
         //I am looking here for the presence of the filename in the page DOM
-        return driver.wait(until.elementLocated(By.xpath(uploadRootButton)), 20000).getText().then(function(text){
+
+        let filePath = (uploadTestFileName + testFile + '"]');
+        console.log('Xpath for filename in documents list: ' + filePath);
+
+        return driver.wait(until.elementLocated(By.xpath(filePath)), 20000).then(function(text){
             console.log("File uploaded successfully.")
         });
     });
@@ -205,7 +207,7 @@ describe("Download current file, and read the file text from download location",
     });
     it("I open the file, and output it's contents", function(){
         driver.sleep(5000);
-        let filePath = (downLoadLocation + testFile);
+        let filePath = (downLoadLocation + testFile + '');
         let fileText = fs.readFileSync(filePath, 'utf-8');
         console.log('Text in test file is: ');
         console.log(fileText);
