@@ -1,7 +1,6 @@
-const fs = require('fs');
-
 const fileEditor = config.fileEditor;
-const documentsWindowButton = '//*[@class = "BreadcrumbBar-item BreadcrumbBar-navItem noContextMenu"][@name = "Documents"]';
+const documentsWindowButton = '//*[@class = "BreadcrumbBar-item BreadcrumbBar-navItem noContextMenu"][@title = "Documents"]';
+
 
 const editButton = '//*[@class = "ms-OverflowSet-item item_8ddbc6c5"]//*[@name = "Open in Text Editor"]';
 const editText = '//*[@class = "mtk1"]';
@@ -38,3 +37,4 @@ describe("Edit file contents and download versions", function(){
 //These are the xpath values to the upload status button, and message.  This pops up and disappears faster than selenium can find it.
 const statusButton = '//button[@class = "ms-Button hide-label ms-Button--commandBar root-94"]';
 const fileUploadedLink = '//*[@title= "Recently added"]//following-sibling::span[1]';
+
